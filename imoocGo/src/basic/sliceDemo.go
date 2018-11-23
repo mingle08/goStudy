@@ -28,5 +28,7 @@ func main(){
     fmt.Println("nums[1:3]=", nums[1:3])
     
     fmt.Println("nums[4:]=", nums[4:])
+    
+    fmt.Println("len=", len(nums), ", capacity=", cap(nums))
 }
 
