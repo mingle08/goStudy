@@ -1,5 +1,7 @@
 package main
-
+/*
+初级版本，有待优化
+*/
 import (
 	"fmt"
 	"sync"
