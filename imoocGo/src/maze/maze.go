@@ -14,9 +14,9 @@ func readMaze(filename string) [][]int {
 	var row, col int
 	fmt.Fscanf(file, "%d %d", &row, &col)
 
-	maze := make([][]int, row)
+	maze := make([][]int, row)  // 二维数组的行
 	for i := range maze {
-		maze[i] = make([]int, col)
+		maze[i] = make([]int, col)  // 二维数组的列
 		for j := range maze[i] {
 			fmt.Fscanf(file, "%d", &maze[i][j])
 		}
@@ -29,6 +29,9 @@ type point struct {
 	i, j int
 }
 
+/*
+ 左 -> 下 -> 右 -> 上
+*/
 var dirs = [4]point{
 	{-1, 0}, {0, -1}, {1, 0}, {0, 1}}
 
@@ -50,6 +53,7 @@ func (p point) at(grid [][]int) (int, bool) {
 
 func walk(maze [][]int,
 	start, end point) [][]int {
+	/* 走到每一格用的步数 */	
 	steps := make([][]int, len(maze))
 	for i := range steps {
 		steps[i] = make([]int, len(maze[i]))
